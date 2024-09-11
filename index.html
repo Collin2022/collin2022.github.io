@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+        }
+
+        .button-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .glow-button {
+            position: relative;
+            width: 240px;
+            height: 72px;
+            border: none;
+            border-radius: 4px;
+            background: transparent;
+            color: var(--btn-color);
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 72px;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 0 1px var(--btn-color);
+            transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+        }
+
+        .glow-button:hover {
+            background-color: var(--btn-color);
+            color: #fff;
+            box-shadow: 0 0 5px var(--btn-color), 0 0 25px var(--btn-color), 0 0 50px var(--btn-color), 0 0 100px var(--btn-color);
+        }
+
+        .glow-button:active {
+            background-color: var(--btn-color);
+            color: #fff;
+            box-shadow: 0 0 15px var(--btn-color), 0 0 30px var(--btn-color), 0 0 60px var(--btn-color), 0 0 120px var(--btn-color);
+            transform: scale(0.95);
+        }
+
+        .border-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .line {
+            position: absolute;
+            display: block;
+            background: linear-gradient(90deg, transparent, var(--btn-color));
+        }
+
+        .top {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            animation: topAnim 4s linear infinite;
+        }
+
+        @keyframes topAnim {
+            0% {
+                left: -100%;
+            }
+            50%,
+            100% {
+                left: 100%;
+            }
+        }
+
+        .right {
+            top: -100%;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            animation: rightAnim 4s linear infinite 1s;
+            background: linear-gradient(180deg, transparent, var(--btn-color));
+        }
+
+        @keyframes rightAnim {
+            0% {
+                top: -100%;
+            }
+            50%,
+            100% {
+                top: 100%;
+            }
+        }
+
+        .bottom {
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 2px;
+            animation: bottomAnim 4s linear infinite 2s;
+            background: linear-gradient(270deg, transparent, var(--btn-color));
+        }
+
+        @keyframes bottomAnim {
+            0% {
+                right: -100%;
+            }
+            50%,
+            100% {
+                right: 100%;
+            }
+        }
+
+        .left {
+            bottom: -100%;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            animation: leftAnim 4s linear infinite 3s;
+            background: linear-gradient(360deg, transparent, var(--btn-color));
+        }
+
+        @keyframes leftAnim {
+            0% {
+                bottom: -100%;
+            }
+            50%,
+            100% {
+                bottom: 100%;
+            }
+        }
+
+        .text {
+            float:right;
+        }
+    </style>
+
+
+    <head>
+        <title>Phoenix 火凤团队</title>
+    </head>
+    <body> 
+        <!--网页顶部-->
+        <div class="text">
+            <h1 style="color: #fff;">Phoenix 火凤团队&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;</h1>
+        </div>
+        <div class="button-container">
+            <button class="glow-button" onclick="handleClick()" style="--btn-color: #2af598;">
+                加入我们
+                <div class="border-lines">
+                    <span class="line top"></span>
+                    <span class="line right"></span>
+                    <span class="line bottom"></span>
+                    <span class="line left"></span>
+                </div>
+            </button>
+        </div>
+
+        <!--对应的函数-->
+        <script>
+            function handleClick() {
+                window.location.href = "https://www.luogu.com.cn/team/82669#main"
+            }
+        </script>
+    </body>
+</html>
