@@ -6,3 +6,4 @@ document.getElementById('menuIcon').addEventListener('click', function () {
 function loginJump() {
     window.location.host = "./html/login.html"
 }
+
